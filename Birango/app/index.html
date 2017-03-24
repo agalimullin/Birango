@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="birangoApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="birangoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="birangoApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="birangoApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Birango</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modalWindows.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery/jquery-3.2.0.js"></script>
+    <script src="controllers/mainController.js"></script>
+</head>
+<body ng-controller="birangoController">
+<!--Окно с затемнением-->
+<div class="wrap"></div>
+<!--main-->
+<div class="main">
+    <!--Навигациия-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
+                <div class="col-lg-1 col-lg-offset-1 fix-mark">
+                    <!--Закладка "Избранное"-->
+                    <div class="favorite_icon" id="modalFavoriteBtn"></div>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p style="">Избранное</p>
+                            <p style="border-bottom: 2px solid #e5e5e5;"></p>
+                            <p class="center">Пусто</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--Блок Языки/Вход-->
+            <div class="col-lg-4 fix-mark back-nav">
+                <div class="top-elements font-size flag rus rel">
+                    <span class="tab1">Русский</span>
+                    <!--Блок выбора языка-->
+                    <!--<div class="padding-top-menu box1 block abs">-->
+                    <!--<div>-->
+                    <!--<p class="font-size flag eng">-->
+                    <!--<a href="/en">English</a>-->
+                    <!--</p>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                    <!--<p class="font-size flag france">-->
+                    <!--<a href="/fr">Français</a>-->
+                    <!--</p>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                    <!--<p class="font-size flag italy">-->
+                    <!--<a href="/it">Italiano</a>-->
+                    <!--</p>-->
+                    <!--</div>-->
+
+                    <!--</div>-->
+                </div>
+                <div class="top-elements font-size inline  rel">
+                    <span class=""><a href="#">Главная</a></span>
+                </div>
+                <div class="top-elements font-size inline user-window rel">
+                    <span class="tab2">Вход</span>
+                    <!--Блок Входа-->
+                    <!--<div class="padding-top-menu box2 block abs">-->
+                    <!--<form class="form-horizontal" action="/login" method="post">-->
+                    <!--<div class="form-group">-->
+                    <!--<div class="col-sm-12">-->
+                    <!--<input type="text" name="user[login]" class="form-control input"-->
+                    <!--placeholder="логин">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<div class="col-sm-12">-->
+                    <!--<input type="password" name="user[password]" class="form-control input"-->
+                    <!--id="inputPassword3"-->
+                    <!--placeholder="пароль">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<div class="col-sm-12 col-md-12">-->
+                    <!--<button type="submit" class="btn btn-default btn-block">Войти</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<hr>-->
+                    <!--<p class="text-center main-color"><a href="/restore">Напомнить пароль</a></p>-->
+                    <!--<p class="text-center main-color"><a href="/register">Регистрация</a></p>-->
+                    <!--<p class="text-center main-color">-->
+                    <!--<a class="provider-icon vk" title="Войти через ВКонтакте"-->
+                    <!--href="https://oauth.vk.com/authorize?client_id=5674365&scope=email&redirect_uri=https%3A%2F%2Fsearcher.deltasecurity.ru%2Fqauth%2Fvk"></a>-->
+                    <!--<a class="provider-icon fb" title="Войти через Facebook"-->
+                    <!--href="https://www.facebook.com/dialog/oauth?client_id=1797669080447566&scope=email&redirect_uri=https%3A%2F%2Fsearcher.deltasecurity.ru%2Fqauth%2Ffb"></a>-->
+                    <!--<a class="provider-icon ya" title="Войти через Yandex"-->
+                    <!--href="https://oauth.yandex.ru/authorize?client_id=26c1df3e16d64ea69828f689a65610a3&response_type=code&display=popup"></a>-->
+                    <!--<a class="provider-icon gl" title="Войти через Google"-->
+                    <!--href="https://accounts.google.com/o/oauth2/auth?client_id=560718713300-kkc0n8go4kbcj12mssnu2l0tqke7derj.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&redirect_uri=https%3A%2F%2Fsearcher.deltasecurity.ru%2Fqauth%2Fgl"></a>-->
+                    <!--<a class="provider-icon ok" title="Войти через Одноклассники"-->
+                    <!--href="http://www.odnoklassniki.ru/oauth/authorize?client_id=1248627712&response_type=code&redirect_uri=https%3A%2F%2Fsearcher.deltasecurity.ru%2Fqauth%2Fok"></a>-->
+
+                    <!--</p>-->
+                    <!--</form>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Блок поиска-->
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <!--Текст начальной страницы-->
+            <h3 class="text-center">Найдите Ваш идеальный отель <br> по выгодной цене</h3>
+            <!--Поиск-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+                    <div class="row color size-grad home">
+                        <div class="col-xs-12 col-sm-9 col-md-7 col-lg-6 col-lg-push-6">
+                            <form id="search" action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="query">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-large btn-black">НАЙТИ</button>
+                                </span>
+                                </div>
+                                <div class="advanced-search all-countries">
+                                <span class="param-title" data-toggle="modal"
+                                      data-target="#countryModal">Все страны</span>
+                                </div>
+                                <!--<input type="hidden" value="1" name="s">-->
+                            </form>
+                        </div>
+                        <div class="col-xs-12 col-sm-1 col-sm-offset-1 col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-4 col-md-pull-6">
+                            <div class="logo">
+                                Birank
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--История поиска-->
+    <div class="container-fluid center history">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-1 col-sm-offset-1 col-md-2 col-md-offset-3 col-lg-1 col-lg-offset-5 padding_right">
+                        <!--<div class="clock"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></div>-->
+                    </div>
+                    <div class="col-xs-12 col-sm-9 col-md-7 col-lg-6">
+                        <div class="history-body">
+                            <p><a class="grey-text-color" href="#"></a></p>
+
+                        </div>
+                        <p class="reset main-color">Очистить</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="box" id="pink"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box" id="green"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box" id="orange"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="box" id="blue"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top"></div>
+<div class="big"></div>
+<div class="sml"></div>
+
+<!--<ul class="menu">-->
+<!--<li><a href="#!/view1">view1</a></li>-->
+<!--<li><a href="#!/view2">view2</a></li>-->
+<!--</ul>-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<!--<div ng-view></div>-->
+<!--<div>Angular seed app: v<span app-version></span></div>-->
+
+</body>
+</html>
