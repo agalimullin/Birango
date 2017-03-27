@@ -24,7 +24,7 @@
 </head>
 <body ng-controller="birangoController">
 <!--Окно с затемнением-->
-<div class="wrap"></div>
+<!--<div class="wrap"></div>-->
 <!--main-->
 <div class="main">
     <!--Навигациия-->
@@ -33,18 +33,16 @@
             <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
                 <div class="col-lg-1 col-lg-offset-1 fix-mark">
                     <!--Закладка "Избранное"-->
-                    <div class="favorite_icon" id="modalFavoriteBtn"></div>
+                    <div class="favorite_icon" id="modalFavoriteBtn" ng-click="openFavorite()"></div>
                     <!-- The Modal -->
-                    <div id="myModal" class="modal">
-
+                    <div id="favoriteModal" class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
-                            <span class="close">&times;</span>
+                            <span class="close" ng-click="closeFavorite()">&times;</span>
                             <p style="">Избранное</p>
                             <p style="border-bottom: 2px solid #e5e5e5;"></p>
                             <p class="center">Пусто</p>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -138,8 +136,12 @@
                                 </span>
                                 </div>
                                 <div class="advanced-search all-countries">
-                                <span class="param-title" data-toggle="modal"
-                                      data-target="#countryModal">Все страны</span>
+                                    <span class="param-title" ng-click="openCountries()">Все страны</span>
+                                    <div id="countriesModal" class="modal">
+                                        <div class="countries-modal">
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <!--<input type="hidden" value="1" name="s">-->
                             </form>
@@ -176,33 +178,33 @@
         </div>
     </div>
     <!--footer-->
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="box" id="pink"></div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="box" id="green"></div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="box" id="orange"></div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="box" id="blue"></div>
-                                </div>
+    <!--<div id="footer">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-3">-->
+                                    <!--<div class="box" id="pink"></div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                    <!--<div class="box" id="green"></div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                    <!--<div class="box" id="orange"></div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                    <!--<div class="box" id="blue"></div>-->
+                                <!--</div>-->
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
 <div class="top"></div>
 <div class="big"></div>

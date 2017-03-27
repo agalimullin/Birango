@@ -44,3 +44,10 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.countries-modal{
+    background-color: #fefefe;
+    padding: 20px;
+    width: 55%;
+    margin: 0 auto;
+}
